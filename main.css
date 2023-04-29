@@ -1,3 +1,95 @@
 body {
-  background: whitesmoke;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+.container {
+  margin: 20px auto;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type='submit'] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type='submit']:hover {
+  background-color: #45a049;
+}
+.pers-data {
+  background-color: #a22c29;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px rgba(80, 24, 24, 0.3);
+}
+/* SA GROUP MEMBERS NA d */
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 50px;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.profile-details h2 {
+  margin: 10px 0;
+  font-weight: normal;
+}
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #45a049;
 }

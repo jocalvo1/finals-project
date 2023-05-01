@@ -1,14 +1,26 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
+  background-image: url('Bckg.png');
+  background-size: cover;
 }
 .container {
   margin: 20px auto;
   max-width: 500px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.container input,
+.container select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 input[type='text'],
 input[type='password'] {
@@ -41,55 +53,24 @@ input[type='submit']:hover {
   border-radius: 4px;
   box-shadow: 0px 0px 10px 0px rgba(80, 24, 24, 0.3);
 }
-/* SA GROUP MEMBERS NA d */
-
-.profile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  margin-top: 50px;
-}
-
-.profile-picture {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 50px;
-}
-
-.profile-picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.profile-details {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-}
-
-.profile-details h2 {
-  margin: 10px 0;
-  font-weight: normal;
-}
-.back-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
+.group-members a {
+  color: #333;
   text-decoration: none;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border: none;
-  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
 }
-
-.back-btn:hover {
-  background-color: #45a049;
+.group-members {
+  padding: 10px 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }

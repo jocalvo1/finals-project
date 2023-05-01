@@ -14,51 +14,84 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="pers-data">personal data</h1>
-      <form action="/" method="">
-        <input type="text" placeholder="Name (ex. Joseph Emmanuel N. Calvo)" id="name" required />
+      <h1 class="pers-data">Job Application</h1>
+      <form action="/" method="post" onsubmit="return create_account()">
+        <input type="text" placeholder="Name (ex. Joseph Emmanuel N. Calvo)" id="n1" required />
 
-        <input type="text" placeholder="E-mail (ex. jocalvo@gmail.com)" />
+        <input type="text" placeholder="E-mail (ex. jocalvo@gmail.com)" id="e1" required />
 
         <input
           type="text"
           placeholder="Address (ex. Barangay Fabrica, Sagay City, Negros Occidental)"
-          id="address"
+          id="a1"
           required
         />
 
-        <input type="text" placeholder="Contact Number (ex. 09123456789)" id="contact-number" />
+        <input type="text" placeholder="Contact Number (ex. 09123456789)" id="c1" required />
 
-        <input
-          type="password"
-          placeholder="Password (6 minimum and 12 maximum)"
-          id="Password"
-          required
-        />
+        <input type="password" placeholder="Password (6 minimum and 12 maximum)" id="p1" required />
 
-        <input type="password" placeholder="Confirm password" id="confirm-password" required />
+        <input type="password" placeholder="Confirm password" id="p2" required />
 
-        <input type="submit" value="REGISTER" onClick="create_account()" />
+        <select name="Position" id="position">
+          <option value="pos1">IT Technician</option>
+          <option value="pos2">Support Specialist</option>
+          <option value="pos3">Quality Assurance Tester</option>
+          <option value="pos4">Web Developer</option>
+          <option value="pos5">IT Security Specialist</option>
+          <option value="pos6">Computer Programmer</option>
+          <option value="pos7">System Analyst</option>
+          <option value="pos8">Network Engineer</option>
+          <option value="pos9">Software Engineer</option>
+          <option value="pos10">User Experience Designer</option>
+          <option value="pos11">Database Administrator</option>
+          <option value="pos12">Data Scientist</option>
+          <option value="pos13">Computer Scientist</option>
+          <option value="pos14">IT Director</option>
+          <option value="pos15">Applications Engineer</option>
+          <option value="pos16">Cloud System Engineer</option>
+          <option value="pos17">Data Quality Manager</option>
+          <option value="pos18">Help Desk Technician</option>
+          <option value="pos19">IT Coordinator</option>
+          <option value="pos20">Management Information Systems Director</option>
+          <option value="pos21">Web Administrator</option>
+        </select>
+
+        <input type="submit" value="REGISTER" />
       </form>
 
-      <p class="group-members" align="center">
+      <p class="group-members" align="left">
         <a href="group-members.html"><small>Group members</small></a>
       </p>
     </div>
     <script type="text/javascript">
       function create_account() {
-        var n = document.getElementById('name').value;
-        var a = document.getElementById('address').value;
-        var cn = document.getElementById('contact-number').value;
-        var p = document.getElementById('passowrd').value;
-        var cp = document.getElementById('confirm-password').value;
+        var name = document.getElementById('n1').value;
+        var address = document.getElementById('a1').value;
+        var email = document.getElementById('e1').value;
+        var conNum = document.getElementById('c1').value;
+        var passw = document.getElementById('p1').value;
+        var confPassw = document.getElementById('p2').value;
 
-        var email_val = /^(a-zA-Z0-9_\-\.)+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        var letters = /^[a-zA-Z]+$/;
-        var numbers = /^[0-9]{11}$/;
+        var email_val = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var letters = /^[a-zA-Z ]+$/;
+        var numbers = /^[0-9]+$/;
 
-        if (n == '' || a == '' || cn == '' || p == '' || cp == '') {
-          alert('Please enter each detail correctly');
+        if (passw != confPassw) {
+          alert('Passwords do not match');
+        } else if (!email_val.test(email)) {
+          alert('Please enter the correct email format');
+        } else if (!letters.test(name)) {
+          alert('Name contains alphabets only');
+        } else if (!numbers.test(conNum)) {
+          alert('Contact number contains numbers only');
+        } else if (document.getElementById('p1').value.length > 12) {
+          alert('Password cannot exceed 12');
+        } else if (document.getElementById('p1').value.length < 6) {
+          alert('Password must contain at least 6');
+        } else if (document.getElementById('c1').value.length != 11) {
+          alert('Please enter valid phone number');
+        } else {
         }
       }
     </script>

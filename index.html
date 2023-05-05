@@ -14,26 +14,46 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="pers-data">Job Application</h1>
-      <form action="/" method="post" onsubmit="return create_account()">
-        <input type="text" placeholder="Name (ex. Joseph Emmanuel N. Calvo)" id="n1" required />
+      <h1 class="pers-data">Philippine Job Application</h1>
+      <form action="main.html" method="post" onsubmit="return create_account()">
+        <label for="username">Username</label>
+        <input type="text" placeholder="Username (5-10 characters only)" id="username" required />
 
-        <input type="text" placeholder="E-mail (ex. jocalvo@gmail.com)" id="e1" required />
+        <label for="name">Name</label>
+        <input type="text" placeholder="Name (ex. Joseph Emmanuel N. Calvo)" id="name" required />
 
+        <label for="email">Email</label>
+        <input type="text" placeholder="E-mail (ex. jocalvo@gmail.com)" id="email" required />
+
+        <label for="address">Address</label>
         <input
           type="text"
           placeholder="Address (ex. Barangay Fabrica, Sagay City, Negros Occidental)"
-          id="a1"
+          id="address"
           required
         />
 
-        <input type="text" placeholder="Contact Number (ex. 09123456789)" id="c1" required />
+        <label for="contact_number">Contact Number</label>
+        <input
+          type="text"
+          placeholder="Contact Number (ex. 09123456789)"
+          id="contact_number"
+          required
+        />
 
-        <input type="password" placeholder="Password (6 minimum and 12 maximum)" id="p1" required />
+        <label for="password">Create Password</label>
+        <input
+          type="password"
+          placeholder="Password (6 minimum and 12 maximum)"
+          id="password"
+          required
+        />
 
-        <input type="password" placeholder="Confirm password" id="p2" required />
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" placeholder="Confirm password" id="confirm_password" required />
 
-        <select name="Position" id="position">
+        <label for="position">Desired Position</label>
+        <select name="position" id="position">
           <option value="pos1">IT Technician</option>
           <option value="pos2">Support Specialist</option>
           <option value="pos3">Quality Assurance Tester</option>
@@ -57,7 +77,7 @@
           <option value="pos21">Web Administrator</option>
         </select>
 
-        <input type="submit" value="REGISTER" />
+        <input type="submit" value="REGISTER" onClick="create_account()" />
       </form>
 
       <p class="group-members" align="left">
@@ -66,31 +86,36 @@
     </div>
     <script type="text/javascript">
       function create_account() {
-        var name = document.getElementById('n1').value;
-        var address = document.getElementById('a1').value;
-        var email = document.getElementById('e1').value;
-        var conNum = document.getElementById('c1').value;
-        var passw = document.getElementById('p1').value;
-        var confPassw = document.getElementById('p2').value;
+        var username = document.getElementById('username').value;
+        var name = document.getElementById('name').value;
+        var address = document.getElementById('address').value;
+        var email = document.getElementById('email').value;
+        var contact_number = document.getElementById('contact_number').value;
+        var password = document.getElementById('password').value;
+        var confirm_password = document.getElementById('confirm_password').value;
 
         var email_val = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         var letters = /^[a-zA-Z ]+$/;
         var numbers = /^[0-9]+$/;
 
-        if (passw != confPassw) {
+        if (password != confirm_password) {
           alert('Passwords do not match');
         } else if (!email_val.test(email)) {
           alert('Please enter the correct email format');
         } else if (!letters.test(name)) {
           alert('Name contains alphabets only');
-        } else if (!numbers.test(conNum)) {
+        } else if (!numbers.test(contact_number)) {
           alert('Contact number contains numbers only');
-        } else if (document.getElementById('p1').value.length > 12) {
+        } else if (document.getElementById('password').value.length > 12) {
           alert('Password cannot exceed 12');
-        } else if (document.getElementById('p1').value.length < 6) {
+        } else if (document.getElementById('password').value.length < 6) {
           alert('Password must contain at least 6');
-        } else if (document.getElementById('c1').value.length != 11) {
+        } else if (document.getElementById('contact_number').value.length != 11) {
           alert('Please enter valid phone number');
+        } else if (document.getElementById('username').value.length > 10) {
+          alert('Username cannot exceed 10');
+        } else if (document.getElementById('username').value.length < 5) {
+          alert('Username must contain at least 5');
         } else {
         }
       }

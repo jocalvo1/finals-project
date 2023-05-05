@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+  font-size: 14px;
   background-color: #f2f2f2;
   background-image: url('Bckg.png');
   background-size: cover;
@@ -73,4 +74,7 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+a {
+  text-decoration: none;
 }
